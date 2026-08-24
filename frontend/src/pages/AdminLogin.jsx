@@ -12,7 +12,7 @@ export default function AdminLogin() {
     e.preventDefault();
     setError("");
     try {
-    api.post("/admin/login", { username, password });
+    api.post("/api/admin/login", { username, password });
       localStorage.setItem("token", data.token);
       localStorage.setItem("role", "admin");
       navigate("/admin");
