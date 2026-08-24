@@ -1,0 +1,53 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #f5f6fa;
+  color: #1f2430;
+}
+.container { max-width: 860px; margin: 0 auto; padding: 24px 16px 64px; }
+nav.topnav {
+  display: flex; gap: 16px; align-items: center;
+  background: #1f2430; padding: 14px 24px;
+}
+nav.topnav a { color: #fff; text-decoration: none; font-size: 14px; opacity: .85; }
+nav.topnav a:hover { opacity: 1; }
+nav.topnav .brand { font-weight: 700; margin-right: auto; opacity: 1; }
+
+.card {
+  background: #fff; border-radius: 10px; padding: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08); margin-bottom: 16px;
+}
+h1 { font-size: 22px; } h2 { font-size: 18px; }
+
+label { display: block; font-size: 13px; font-weight: 600; margin: 12px 0 4px; }
+input, select, textarea {
+  width: 100%; padding: 8px 10px; border: 1px solid #d7dae0; border-radius: 6px; font-size: 14px;
+}
+textarea { min-height: 80px; }
+
+button {
+  background: #4f46e5; color: #fff; border: none; padding: 9px 16px;
+  border-radius: 6px; font-size: 14px; cursor: pointer; margin-top: 14px;
+}
+button:hover { background: #4338ca; }
+button.secondary { background: #e5e7eb; color: #1f2430; }
+button.danger { background: #dc2626; }
+
+.error { color: #dc2626; font-size: 13px; margin-top: 8px; }
+.success { color: #16a34a; font-size: 13px; margin-top: 8px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #eceef1; }
+th { background: #f9fafb; }
+
+.badge {
+  display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600;
+}
+.badge.Applied, .badge.Scheduled { background: #dbeafe; color: #1d4ed8; }
+.badge.InReview, .badge["In Review"] { background: #fef3c7; color: #92400e; }
+.badge.Selected, .badge.Completed { background: #dcfce7; color: #15803d; }
+.badge.Rejected, .badge["No-show"] { background: #fee2e2; color: #b91c1c; }
+
+.filters { display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+.filters select { width: auto; }
