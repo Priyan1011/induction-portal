@@ -9,13 +9,20 @@ const { sendEmail } = require("../utils/email");
 async function login(req, res) {
   try {
     const { username, password } = req.body;
-    const admin = await Admin.findOne({ username });
-    if (!admin) return res.status(401).json({ message: "Invalid credentials" });
 
-    const ok = await bcrypt.compare(password, admin.passwordHash);
-    if (!ok) return res.status(401).json({ message: "Invalid credentials" });
+    if (
+      username !== process.env.ADMIN_USERNAME ||
+      password !== process.env.ADMIN_PASSWORD
+    ) {
+      return res.status(401).json({ message: "Invalid credentials" });
+    }
 
-    const token = jwt.sign({ role: "admin", username }, process.env.JWT_SECRET, { expiresIn: "12h" });
+    const token = jwt.sign(
+      { role: "admin", username },
+      process.env.JWT_SECRET,
+      { expiresIn: "12h" }
+    );
+
     return res.json({ token });
   } catch (err) {
     console.error(err);
